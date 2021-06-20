@@ -30,4 +30,4 @@ let resultSearchName = (limit, result) => {
     console.log(resultLimit);
 }
 
-searchName("ar", 4, resultSearchName)
+searchName("an", 3, resultSearchName)
