@@ -25,8 +25,7 @@ const searchEmployes = async (nameEmploye, limit) => {
                 return person.employee_name.toLowerCase().includes(nameEmploye.toLowerCase());
             });
             if (resultSearch.length > 0) {
-                resultSearch = resultSearch.slice(0, limit);
-                resultSearch.forEach((value) => {
+                resultSearch.slice(0, limit).forEach((value) => {
                     console.log("======================================");
                     console.log(`Employee name : ${value.employee_name}`);
                     console.log(`Employee age : ${value.employee_age}`);
@@ -41,4 +40,6 @@ const searchEmployes = async (nameEmploye, limit) => {
     }
 }
 
+console.log("test1");
 searchEmployes("ar", 2)
+console.log("test2");

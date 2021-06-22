@@ -8,11 +8,12 @@ const getMonth = (callback) => {
     if (!error) {
       callback(null,month)
     } else {
-      callback(new Error("Sorry Data Not Found"))
+      callback(new Error("Sorry Data Not Found",[]))
     }
   }, 4000);
 };
 
+console.log("task1");
 getMonth((status,data) => {
   if (!status) {
     data.map((value) => {
@@ -22,3 +23,4 @@ getMonth((status,data) => {
     console.log(status);
   }
 })
+console.log("task2");

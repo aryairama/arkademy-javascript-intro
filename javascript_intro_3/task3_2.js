@@ -15,9 +15,9 @@ const dataColors = () => {
     })
 }
 
-const searchColors = async (search, type) => {
-    if (!Boolean(search) || !Boolean(type) || typeof search !== "string" || typeof type !== "string") {
-        console.log("color and type must be a string and cannot be empty");
+const searchColors = async (search, type, limit) => {
+    if (!Boolean(search) || !Boolean(type) || typeof search !== "string" || typeof type !== "string" || typeof limit !== "number" || limit < 0) {
+        console.log("color and type must be a string and cannot be empty,limit must be a number and not a negative number");
     } else {
         try {
             let colors = await dataColors()
@@ -30,7 +30,7 @@ const searchColors = async (search, type) => {
                 console.log("search type must be  'name' or 'hex'");
             }
             if (resultColors.length > 0) {
-                resultColors.forEach((color) => {
+                resultColors.slice(0,limit).forEach((color) => {
                     console.log("======================================");
                     console.log(`Color name : ${color.name}`)
                     console.log(`Color hex : ${color.hex}`);
@@ -44,4 +44,6 @@ const searchColors = async (search, type) => {
     }
 }
 
-searchColors("black", "name")
+console.log("test1");
+searchColors("black", "name",2)
+console.log("test2");
