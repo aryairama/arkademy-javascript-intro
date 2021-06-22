@@ -24,4 +24,4 @@ let prosesNilai = (nilaiAwal, nilaiAkhir, dataArray) => {
         console.log("Jumlah angka dalam dataArray tidak ada");
     }
 };
-seleksiNilai(20, 43, [1, 19, 7, 4, 21, 22, 41, 20, 4, 3], prosesNilai);
+seleksiNilai(5, 20 , [2, 25, 4, 14, 17, 30, 8], prosesNilai);
