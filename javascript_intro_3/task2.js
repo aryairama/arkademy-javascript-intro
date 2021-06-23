@@ -8,7 +8,7 @@ const getMonth = (callback) => {
     if (!error) {
       callback(null,month)
     } else {
-      callback(new Error("Sorry Data Not Found",[]))
+      callback(new Error("Sorry Data Not Found",[]),null)
     }
   }, 4000);
 };
@@ -20,6 +20,7 @@ getMonth((status,data) => {
       console.log(value);
     })
   } else {
+    console.log(data);
     console.log(status);
   }
 })
